@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form method="post" action="add/" class="post-form">
+            {% csrf_token %}
+          Name <input type="text" name="name">
+            <button type="submit">Save</button>
+
+        </form>
+        
+            <h1>My names</h1>
+          {% for i in name %}
+            <h2>{{i}}</h2>
+            <a href="/delete/{{i.name}}">Delete</a>
+            <a href="/edit/{{i.name}}">Update</a>
+            
+            
+            
+            {% endfor %}
+            
+        
+      
+    </body>
+</html>
